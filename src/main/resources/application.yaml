@@ -1,0 +1,25 @@
+spring:
+  mvc:
+    static-path-pattern: /static/**
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:8848/yi_yan?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 12345678
+  servlet:
+    multipart:
+      max-file-size: 10MB
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.gzj.dao.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+server:
+  port: 8081
+qiniu:
+  accessKey: CxQyuw7D4qaCYQgUKEZ5dtbZ8k_PHULabqsFNGp2
+  secretKey: U0Sn4D4GKCohuo0wl4PTIHVc_ENOUkJNPiTBNeJz
+  bucket: soyiyan
+  url: http://r5ue3ylie.hn-bkt.clouddn.com/
+logging:
+  config: classpath:log/log4j2.xml

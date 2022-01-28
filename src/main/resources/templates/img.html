@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YIYAN</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/default.css">
+    <link href="../static/css/buttons.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="../static/js/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <br>
+            <br>
+            <img th:src="@{${url}}" style="width: 100%" class="img">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <br>
+            <h4 class="w_and_h"></h4>
+        </div>
+        <div class="col-xs-6">
+            <br>
+            <h4 class="f_name" th:text="${name}"></h4>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        let img = $(".img")[0]
+        let w= img.width
+        let h= img.height
+        let na=img.src
+        $(".w_and_h").text(w+' X '+h)
+    });
+</script>
+</body>
+</html>

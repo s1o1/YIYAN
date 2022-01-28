@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YIYAN</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/default.css">
+    <link href="../static/css/buttons.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="../static/js/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <h3 class="text-center">
+                        YIYAN壁纸
+                    </h3>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="/">首页</a>
+                        </li>
+                        <li>
+                            <a href="/y_picture">精美壁纸</a>
+                        </li>
+                        <li>
+                            <a href="/login">登录</a>
+                        </li>
+                        <li>
+                            <a href="/personal_message">个人中心</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <div id="carousel-ad" class="carousel slide" data-ride="carousel" data-interval="2000">
+                        <ol class="carousel-indicators">
+                            <li data-slide-to="0" data-target="#carousel-990890" class="active">
+                            </li>
+                            <li data-slide-to="1" data-target="#carousel-990890" >
+                            </li>
+                            <li data-slide-to="2" data-target="#carousel-990890">
+                            </li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img alt="" src="../static/images/h1.jpg" />
+                                <div class="carousel-caption">
+                                    <p>
+                                        一念放下，万般自在。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img alt="" src="../static/images/h2.jpg" />
+                                <div class="carousel-caption">
+                                    <p>
+                                        生命之灯因热情而点燃，生命之舟因拼搏而前行。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img alt="" src="../static/images/h3.jpg" />
+                                <div class="carousel-caption">
+                                    <p>
+                                        凉风把枫叶吹红，冷言让强者成熟。
+                                    </p>
+                                </div>
+                            </div>
+                        </div> <a class="left carousel-control" href="#carousel-990890" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-990890" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        <div class="col-md-12 column">
+            <br>
+            <span>最新壁纸</span>
+        </div>
+        </div>
+
+    <div class="row">
+        <div class="col-xs-4" style="margin-top: 20px" th:each="pic:${pics}">
+            <a th:href="@{/img(url=${pic.getUrl()},name=${pic.getName()})}" target="_blank"><img  style="width: 100%;height:150px" th:src="@{${pic.getUrl()}}"></a>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-6 text-left">
+            <a th:href="@{/(page=${page}-1)}"><button type="button" class="btn btn-light">上一页</button></a>
+        </div>
+        <div class="col-xs-6 text-left">
+            <a th:href="@{/(page=${page}+1)}"><button type="button" class="btn btn-light">下一页</button></a>
+        </div>
+    </div>
+</div>
+<script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YIYAN</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/default.css">
+    <link href="../static/css/buttons.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="../static/js/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <h3 class="text-center">
+                        YIYAN壁纸
+                    </h3>
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="/">首页</a>
+                        </li>
+                        <li>
+                            <a href="/y_picture">精美壁纸</a>
+                        </li>
+                        <li>
+                            <a href="/login">登录</a>
+                        </li>
+                        <li class="active">
+                            <a href="/personal_message">个人中心</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+
+        </div>
+        <div class="col-xs-6">
+            <br>
+            <img src="../static/images/qq.jpg"  style="width: 100%;border-radius:100%; ">
+        </div>
+        <div class="col-xs-3">
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <br>
+            <a href="/upload"><button type="button" class="btn btn-light">文件上传</button></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <br>
+            <a href="/del"><button type="button" class="btn btn-light">文件删除</button></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <br>
+            <h5 th:text="${session.user}">SO</h5>
+        </div>
+    </div>
+</div>
+<script>
+
+</script>
+</body>
+</html>

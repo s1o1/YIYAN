@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YIYAN</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/default.css">
+    <link href="../static/css/buttons.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="../static/js/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <h3 class="text-center">
+                        YIYAN壁纸
+                    </h3>
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="/">首页</a>
+                        </li>
+                        <li class="active">
+                            <a href="/y_picture">精美壁纸</a>
+                        </li>
+                        <li>
+                            <a href="/login">登录</a>
+                        </li>
+                        <li>
+                            <a href="/personal_message">个人中心</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 column">
+            <br>
+            <span>隐藏福利</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4" style="margin-top: 20px" th:each="pic:${pics}">
+            <a th:href="@{/img(url=${pic.getUrl()},name=${pic.getName()})}" target="_blank"><img  style="width: 100%;height:150px" th:src="@{${pic.getUrl()}}"></a>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-6 text-left">
+            <a th:href="@{/y_picture(page=${page}-1)}"><button type="button" class="btn btn-light">上一页</button></a>
+        </div>
+        <div class="col-xs-6 text-left">
+            <a th:href="@{/y_picture(page=${page}+1)}"><button type="button" class="btn btn-light">下一页</button></a>
+        </div>
+    </div>
+</div>
+<script>
+
+</script>
+</body>
+</html>
